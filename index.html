@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Bookshelf Apps</title>
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet">
+   <link rel="stylesheet" href="dist/css/output.css">
+   <link rel="stylesheet" href="dist/css/style.css">
+</head>
+
+<body>
+   <header class="bg-transparent absolute top-0 w-full items-center z-10">
+      <div class="container">
+         <div class="flex items-center justify-between relative">
+            <div class="px-4">
+               <a href="#" class="text-2xl font-black py-3 text-white inline-block">Bookshelf App</a>
+            </div>
+            <div class="flex items-center px-4">
+               <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden">
+                  <span class="hamburger-line origin-top-left"></span>
+                  <span class="hamburger-line"></span>
+                  <span class="hamburger-line origin-bottom-left"></span>
+               </button>
+
+               <nav id="nav-menu"
+                  class="hidden absolute py-5 border border-blue bg-white border-none shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:shadow-none lg:max-w-full lg:rounded">
+                  <ul class="block lg:flex">
+                     <li class="group nav-link">
+                        <a href="#home"
+                           class="text-sm font-bold text-navy lg:text-slate-300 py-2 mx-5 flex lg:group-hover:text-white group-hover:text-blue transition duration-300">Home</a>
+                     </li>
+                     <li class="group nav-link">
+                        <a href="#about"
+                           class="text-sm font-bold text-navy lg:text-slate-300 py-2 mx-5 flex lg:group-hover:text-white group-hover:text-blue transition duration-300">About
+                           Us</a>
+                     </li>
+                     <li class="group nav-link">
+                        <a href="#offer"
+                           class="text-sm font-bold text-navy lg:text-slate-300 py-2 mx-5 flex lg:group-hover:text-white group-hover:text-blue transition duration-300">Offers</a>
+                     </li>
+                  </ul>
+               </nav>
+            </div>
+         </div>
+      </div>
+   </header>
+
+   <main>
+      <!-- Form -->
+      <section class="py-20 main-bg">
+         <div class="container">
+            <div class="flex flex-wrap mb-3 justify-between">
+               <div class="w-full self-center px-4 lg:w-1/2">
+                  <h1 class="lg:text-[48px] lg:leading-[60px] header-md text-2xl block font-extrabold text-white mb-5"
+                     data-aos="fade-right" data-aos-once="true">
+                     Input Your Book
+                  </h1>
+                  <form>
+                     <div class="relative z-0 w-full mb-6 group">
+                        <input type="text" name="inputBookTitle" id="inputBookTitle"
+                           class="block py-2.5 px-0 w-full text-lg text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                           placeholder=" " required />
+                        <label for="inputBookTitle"
+                           class="peer-focus:font-medium absolute text-lg text-slate-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Title</label>
+                     </div>
+                     <div class="relative z-0 w-full mb-6 group">
+                        <input type="text" name="inputBookAuthor" id="inputBookAuthor"
+                           class="block py-2.5 px-0 w-full text-lg text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                           placeholder=" " required />
+                        <label for="inputBookAuthor"
+                           class="peer-focus:font-medium absolute text-lg text-slate-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Writer</label>
+                     </div>
+                     <div class="relative z-0 w-full mb-6 group">
+                        <input type="number" name="inputBookYear" id="inputBookYear"
+                           class="block py-2.5 px-0 w-full text-lg text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                           placeholder=" " required />
+                        <label for="inputBookYear"
+                           class="peer-focus:font-medium absolute text-lg text-slate-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Year</label>
+                     </div>
+
+                     <div class="flex items-start justify-between mb-6">
+                        <div>
+                           <div class="flex items-center h-5">
+                              <input id="inputBookIsComplete" type="checkbox" value=""
+                                 class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300">
+                              <label for="inputBookIsComplete"
+                                 class="ml-2 text-sm font-medium text-white">Done Reading</label>
+                           </div>
+                        </div>
+                        <div>
+                           <button type="submit" id="bookSubmit"
+                              class="text-base font-semibold text-white bg-navy py-3 px-12 rounded-lg inline-block mr-3 hover:bg-softblue hover:text-navy hover:scale-110 transition duration-300" >Submit</button>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+               <div class="w-full self-end px-4 justify-center items-center lg:w-1/2" data-aos="fade-left"
+                  data-aos-once="true">
+                  <div class="relative mt-10 lg:mt-9 lg:right-0">
+                     <div class="md:float-none lg:ml-24 rounded-lg">
+                        <img src="dist/img/banner.png" alt="banner" class="banner" />
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Form-END -->
+
+
+      <!-- Search -->
+      <section class="book_shelf">
+         <div class="container">
+            <div class="w-full px-4">
+               <div class="max-w-xl mx-auto text-center">
+                  <p class="lg:text-xl text-blue text-base py-2 font-extrabold" data-aos="fade-down"
+                     data-aos-once="true">
+                     Search</p>
+                  <h1 class="lg:text-[48px] lg:leading-[60px] header-md text-2xl block font-extrabold text-navy mb-5"
+                     data-aos="zoom-in" data-aos-once="true">
+                  </h1>
+               </div>
+            </div>
+            <form id="searchBook">
+               <label for="searchBookTitle" class="mb-2 text-sm font-medium text-gray-900 sr-only">Title</label>
+               <div class="relative">
+                  <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                     <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                           d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                     </svg>
+                  </div>
+                  <input type="search" id="searchBookTitle"
+                     class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+                     placeholder="Search Title..." required>
+                  <button type="submit" id="searchSubmit"
+                     class="text-slate-900 absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2">Search</button>
+               </div>
+            </form>
+         </div>
+      </section>
+      <!-- Search-END -->
+
+
+      <!-- IncompleteBook -->
+      <section class="book_shelf">
+         <div class="w-full px-4">
+            <div class="max-w-xl mx-auto text-center">
+               <p class="lg:text-xl text-blue text-base py-2 font-extrabold" data-aos="fade-down" data-aos-once="true">
+                  Book List</p>
+               <h1 class="lg:text-[48px] lg:leading-[60px] header-md text-2xl block font-extrabold text-navy mb-5"
+                  data-aos="zoom-in" data-aos-once="true">
+                  Incomplete Book
+               </h1>
+            </div>
+         </div>
+
+         <div id="incompleteBookshelfList" class="book_list">
+            
+         </div>
+      </section>
+      <!-- IncompleteBook-END -->
+
+
+      <!-- CompleteBook -->
+      <section class="book_shelf">
+         <div class="w-full px-4">
+            <div class="max-w-xl mx-auto text-center">
+               <h1 class="lg:text-[48px] lg:leading-[60px] header-md text-2xl block font-extrabold text-navy mb-5"
+                  data-aos="zoom-in" data-aos-once="true">
+                  Completed Book
+               </h1>
+            </div>
+         </div>
+
+         <div id="completeBookshelfList" class="book_list">
+            
+         </div>
+      </section>
+      <!-- CompleteBook-END -->
+   </main>
+
+
+   <!-- Footer -->
+   <footer class="bg-gray-900 p-12 border-t-2 border-blue">
+      <div class="container">
+         <div class="flex flex-wrap">
+            <div class="text-center w-full px-4 text-white">
+               <h2 class=" font-semibold text-2xl text-white mb-2">Have something to ask?</h2>
+               <h3>If you have any question, you can contact me on social media</h3>
+               <div class="pt-2 flex flex-wrap justify-center gap-4 text-xl">
+                  <a href="https://www.instagram.com/_ant1po1e" target="_blank"
+                     class="hover:scale-150 hover:text-blue transition duration-300"><i class="bi bi-instagram"></i></a>
+                  <a href="https://twitter.com/apolantipole" target="_blank"
+                     class="hover:scale-150 hover:text-blue transition duration-300"><i class="bi bi-twitter"></i></a>
+                  <a href="#" target="_blank" class="hover:scale-150 hover:text-blue transition duration-300"><i
+                        class="bi bi-linkedin"></i></a>
+                  <a href="https://github.com/ant1po1e" target="_blank"
+                     class="hover:scale-150 hover:text-blue transition duration-300"><i class="bi bi-github"></i></a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+   <div class="text-center w-full px-4 py-4 bg-gray-900 border-t-2 border-t-blue text-white">
+      <p>Made with ♥ by <a href="https://github.com/ant1po1e" target="_blank" class="text-blue text-bold">Ant1po1e</a> |
+         Copyright © 2023</p>
+   </div>
+   
+   <!-- Back-to-Top -->
+   <div class="fixed z-30 bottom-0 right-0 mr-10 mb-10">
+      <a href="#home" id="back2top"
+         class="justify-center items-center opacity-0 text-softblue font-bold text-5xl block bg-blue rounded-full bg-opacity-50 lg:text-7xl md:text-6xl ease-in animate-bounce transition-opacity duration-300">
+         <span><i class="bi bi-arrow-up-circle"></i></span>
+      </a>
+   </div>
+   <!-- Back-to-Top-END -->
+   <!-- Footer-END -->
+
+   <script src="dist/js/script.js"></script>
+
+</body>
+
+</html>
